@@ -8,7 +8,7 @@ class AdminData extends Component {
         return (
             <div>
                 <p>Date goes here</p>
-           
+
             </div>
         )
     }

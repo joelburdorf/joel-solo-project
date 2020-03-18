@@ -5,7 +5,7 @@ class AdminHome extends Component {
 
    getData=()=>{
     console.log('in getData');
-       this.props.history.push('/data')
+       this.props.history.push('/adminData')
     }
 
     getUserAccounts = () => {

@@ -16,9 +16,9 @@ import ProtectedRoute from '../ProtectedRoute/ProtectedRoute'
 import AboutPage from '../AboutPage/AboutPage';
 import UserPage from '../UserPage/UserPage';
 import InfoPage from '../InfoPage/InfoPage';
-import AdminHome from '../AdminHome/AdminHome';
-import AdminData from '../AdminData/AdminData';
-import AdminUser from '../AdminUser/AdminUser';
+import AdminHome from '../AdminCompontents/AdminHome/AdminHome';
+import AdminUser from '../AdminCompontents/AdminUser/AdminUser';
+import AdminData from '../AdminCompontents/AdminData/AdminData';
 
 import './App.css';
 
@@ -65,15 +65,10 @@ class App extends Component {
             />
             <ProtectedRoute
               exact
-              path="/adminhome"
-              component={AdminHome}
-            />
-            <Route
-              exact
               path="/admindata"
               component={AdminData}
             />
-            <Route
+            <ProtectedRoute
               exact
               path="/adminUser"
               component={AdminUser}
