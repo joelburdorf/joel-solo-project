@@ -16,9 +16,15 @@ import ProtectedRoute from '../ProtectedRoute/ProtectedRoute'
 import AboutPage from '../AboutPage/AboutPage';
 import UserPage from '../UserPage/UserPage';
 import InfoPage from '../InfoPage/InfoPage';
+
 import AdminHome from '../AdminCompontents/AdminHome/AdminHome';
 import AdminUser from '../AdminCompontents/AdminUser/AdminUser';
 import AdminData from '../AdminCompontents/AdminData/AdminData';
+
+import SurveyPageOne from '../SurveyComponents/SurveyPageOne/SurveyPageOne';
+import SurveyPageTwo from '../SurveyComponents/SurveyPageTwo/SurveyPageTwo';
+import SurveyPageThree from '../SurveyComponents/SurveyPageThree/SurveyPageThree';
+
 
 import './App.css';
 
@@ -72,6 +78,21 @@ class App extends Component {
               exact
               path="/adminUser"
               component={AdminUser}
+            />
+            <ProtectedRoute
+              exact
+              path="/surveyPageOne"
+              component={SurveyPageOne}
+            />
+            <ProtectedRoute
+              exact
+              path="/surveyPageTwo"
+              component={SurveyPageTwo}
+            />
+            <ProtectedRoute
+              exact
+              path="/surveyPageThree"
+              component={SurveyPageThree}
             />
             {/* If none of the other routes matched, we will show a 404. */}
             <Route render={() => <h1>404</h1>} />
