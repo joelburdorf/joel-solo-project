@@ -16,6 +16,9 @@ import ProtectedRoute from '../ProtectedRoute/ProtectedRoute'
 import AboutPage from '../AboutPage/AboutPage';
 import UserPage from '../UserPage/UserPage';
 import InfoPage from '../InfoPage/InfoPage';
+import AdminHome from '../AdminHome/AdminHome';
+import AdminData from '../AdminData/AdminData';
+import AdminUser from '../AdminUser/AdminUser';
 
 import './App.css';
 
@@ -54,6 +57,26 @@ class App extends Component {
               exact
               path="/info"
               component={InfoPage}
+            />
+            <ProtectedRoute
+              exact
+              path="/adminhome"
+              component={AdminHome}
+            />
+            <ProtectedRoute
+              exact
+              path="/adminhome"
+              component={AdminHome}
+            />
+            <Route
+              exact
+              path="/admindata"
+              component={AdminData}
+            />
+            <Route
+              exact
+              path="/adminUser"
+              component={AdminUser}
             />
             {/* If none of the other routes matched, we will show a 404. */}
             <Route render={() => <h1>404</h1>} />

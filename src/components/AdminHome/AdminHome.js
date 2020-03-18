@@ -1,0 +1,36 @@
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+
+class AdminHome extends Component {
+
+   getData=()=>{
+    console.log('in getData');
+       this.props.history.push('/data')
+    }
+
+    getUserAccounts = () => {
+        console.log('in getUserAccounts');
+        this.props.history.push('/adminUser')
+    }
+
+    takeSurvey = () => {
+        console.log('in takeSurvey');
+    }
+
+    render() {
+        return (
+            <div>
+                <button onClick={this.getData}>DATA</button>
+                <br></br>
+                <br></br>
+                <button onClick={this.getUserAccounts}>USER ACCOUNTS</button>
+                <br></br>
+                <br></br>
+                <button onClick={this.takeSurvey}>SURVEYS</button>
+                <br></br>
+            </div>
+
+        )}
+}
+
+export default connect()(AdminHome);
