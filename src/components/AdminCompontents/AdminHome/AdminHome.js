@@ -15,6 +15,7 @@ class AdminHome extends Component {
 
     takeSurvey = () => {
         console.log('in takeSurvey');
+        this.props.history.push('/allSurveys')
     }
 
     render() {

@@ -21,9 +21,12 @@ import AdminHome from '../AdminCompontents/AdminHome/AdminHome';
 import AdminUser from '../AdminCompontents/AdminUser/AdminUser';
 import AdminData from '../AdminCompontents/AdminData/AdminData';
 
+import AllSurveys from '../SurveyComponents/AllSurveys/AllSurveys';
 import SurveyPageOne from '../SurveyComponents/SurveyPageOne/SurveyPageOne';
 import SurveyPageTwo from '../SurveyComponents/SurveyPageTwo/SurveyPageTwo';
 import SurveyPageThree from '../SurveyComponents/SurveyPageThree/SurveyPageThree';
+import SurveySummary from '../SurveyComponents/SurveySummary/SurveySummary';
+import SurveyEdit from '../SurveyComponents/SurveyEdit/SurveyEdit';
 
 
 import './App.css';
@@ -81,6 +84,11 @@ class App extends Component {
             />
             <ProtectedRoute
               exact
+              path="/allSurveys"
+              component={AllSurveys}
+            />
+            <ProtectedRoute
+              exact
               path="/surveyPageOne"
               component={SurveyPageOne}
             />
@@ -93,6 +101,16 @@ class App extends Component {
               exact
               path="/surveyPageThree"
               component={SurveyPageThree}
+            />
+            <ProtectedRoute
+              exact
+              path="/surveySummary"
+              component={SurveySummary}
+            />
+            <ProtectedRoute
+              exact
+              path="/surveyEdit"
+              component={SurveyEdit}
             />
             {/* If none of the other routes matched, we will show a 404. */}
             <Route render={() => <h1>404</h1>} />

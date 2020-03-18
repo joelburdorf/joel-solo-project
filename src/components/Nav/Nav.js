@@ -22,6 +22,9 @@ const Nav = (props) => (
           <Link className="nav-link" to="/adminhome">
             Admin
           </Link>
+          <Link className="nav-link" to="/allSurveys">
+            Surveys
+          </Link>
           <Link className="nav-link" to="/info">
             Info Page
           </Link>
