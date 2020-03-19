@@ -12,4 +12,14 @@ router.get('/users', (req, res) => {
         });
 });
 
+router.delete('/deleteUser/:id', (req, res) => {
+     const queryText = 'DELETE FROM "user" WHERE id=$1';
+    pool.query(queryText, [req.params.id])
+        .then(() => { res.sendStatus(200); })
+        .catch((err) => {
+            console.log('Error completing delete user query', err);
+            res.sendStatus(500);
+        });
+});
+
 module.exports = router;
