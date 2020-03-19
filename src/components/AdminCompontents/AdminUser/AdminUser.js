@@ -13,22 +13,29 @@ class AdminUser extends Component {
         this.props.dispatch({ type: 'FETCH_ADMIN_USERS' });
     }
 
+    deleteAdminUser = (event, id) => {
+        console.log('in deleteUser', id);
+        this.props.dispatch({ type: 'DELETE_ADMIN_USERS', payload: id })
+    }
+
     render() {
         return (
             <div>
-                <p>USERNAME: {this.props.reduxState.admin.userAdminAccessReducer.user}</p> 
+                <p>USERNAME: {this.props.reduxState.admin.userAdminAccessReducer.id}</p> 
 
                 <ul>
-                    {/* {this.props.reduxState.admin.userAdminAccessReducer.user.map(taco => (<li key={taco.username}>
-                        </li>))} */}
+                    {this.props.reduxState.admin.userAdminAccessReducer.map(user => (<li key={user.id}>{user.username}
+                        <button onClick={(event) => this.deleteAdminUser(event, user.id)}>Delete</button></li>))}
 
                 </ul>
 
-                <pre>{JSON.stringify(this.props.reduxState.admin.userAdminAccessReducer)}</pre>
+                {/* <pre>{JSON.stringify(this.props.reduxState.admin.userAdminAccessReducer)}</pre> */}
             </div>
         )
     }
 }
+
+
 
 
 
