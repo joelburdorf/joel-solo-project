@@ -44,7 +44,7 @@ class SurveyPageThree extends Component {
 
     addNewSurvey = event => {
         event.preventDefault();
-        this.props.dispatch({ type: 'INPUT_SURVEY_P_THREE', payload: this.state.newSurvey })
+        this.props.dispatch({ type: 'INPUT_SURVEY', payload: this.state.newSurvey })
         console.log('in SurveyPageThree adNewSurvey', this.state.newSurvey);
         this.setState({
             newSurvey: this.state.newSurvey,

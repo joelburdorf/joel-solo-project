@@ -2,6 +2,16 @@ const express = require('express');
 const pool = require('../modules/pool');
 const router = express.Router();
 
+router.get('/last', (req, res) => {
+    const queryText = 'SELECT * FROM "survey"';
+    pool.query(queryText)
+        .then((result) => { res.send(result.rows); })
+        .catch((err) => {
+            console.log('Error completing SELECT user query', err);
+            res.sendStatus(500);
+        });
+});
+
 router.post('/', (req, res) => {
     const newSurvey = req.body.payload;
     const queryText = `INSERT INTO survey 
