@@ -1,16 +1,35 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-
 class SurveyPageThree extends Component {
 
     state = {
         newSurvey: {
+            location: '',
+            date: '',
+            time: '',
+            name: '',
+            age: '',
+            gender: '',
             race: '',
             ethnicity: '',
             group: '',
-
         }
+    }
+    componentDidMount = () => {
+
+        this.props.location.newSurvey &&
+            this.setState({
+                newSurvey: {
+                    ...this.state.newSurvey,
+                    location: this.props.location.newSurvey.location,
+                    date: this.props.location.newSurvey.date,
+                    time: this.props.location.newSurvey.time,
+                    name: this.props.location.newSurvey.name,
+                    age: this.props.location.newSurvey.age,
+                    gender: this.props.location.newSurvey.gender,
+                }
+            })
     }
 
     handleNameChange = (event, param) => {
@@ -27,25 +46,15 @@ class SurveyPageThree extends Component {
         event.preventDefault();
         this.props.dispatch({ type: 'INPUT_SURVEY_P_THREE', payload: this.state.newSurvey })
         console.log('in SurveyPageThree adNewSurvey', this.state.newSurvey);
-
         this.setState({
-            newSurvey: {
-                race: '',
-                ethnicity: '',
-                group: '',
-
-            }
+            newSurvey: this.state.newSurvey,
         });
         this.props.history.push('/surveySummary')
     }
 
- 
-
     render() {
         return (
             <div>
-                <p>SurveyPageThree inputs go here</p>
-
                 <form>
                     <label>
                         Select Race:
@@ -82,13 +91,12 @@ class SurveyPageThree extends Component {
                     <br></br>
                     <br></br>
                     <button onClick={this.addNewSurvey}>Submit Survey</button>
-                   
                 </form>
-
             </div>
         )
     }
 }
 
 export default connect()(SurveyPageThree);
+
 

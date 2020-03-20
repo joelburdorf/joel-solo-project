@@ -9,7 +9,6 @@ class SurveyPageOne extends Component {
             location: '',
             date: '',
             time: '',
-          
         }
     }
 
@@ -23,21 +22,38 @@ class SurveyPageOne extends Component {
         });
     }
 
-    addNewSurvey = event => {
+    //pass props with object to path /details
+    addNewSurvey = (event) => {
         event.preventDefault();
-        this.props.dispatch({ type: 'INPUT_SURVEY_P_ONE', payload: this.state.newSurvey })
-        console.log('in adNewSurvey', this.state.newSurvey);
+        console.log('surveyPageOne newSurvey', this.state.newSurvey.location);
+        console.log('surveyPageOne newSurvey', this.state.newSurvey.date);
+        console.log('surveyPageOne newSurvey', this.state.newSurvey.time);
         
-        this.setState({
-            newSurvey: {
-                location: '',
-                date: '',
-                time: '',
-               
-            }
+        this.props.history.push({
+            pathname: '/surveyPageTwo',
+            newSurvey: this.state.newSurvey
+                // location: this.state.newSurvey.location,
+                // date: this.state.newSurvey.date,
+                // time: this.state.newSurvey.time,
+            
         });
-        this.props.history.push('/surveyPageTwo')
-    }
+    };
+
+    // addNewSurvey = event => {
+    //     event.preventDefault();
+    //     this.props.dispatch({ type: 'INPUT_SURVEY_P_ONE', payload: this.state.newSurvey })
+    //     console.log('in adNewSurvey', this.state.newSurvey);
+        
+    //     this.setState({
+    //         newSurvey: {
+    //             location: '',
+    //             date: '',
+    //             time: '',
+               
+    //         }
+    //     });
+    //     this.props.history.push('/surveyPageTwo')
+    // }
 
     render() {
         return (
@@ -46,15 +62,18 @@ class SurveyPageOne extends Component {
                 
               <form>
                   <label>Enter Location</label>
-                    <input type='text' placeholder="location" value={this.state.newSurvey.location} onChange={(event) => this.handleNameChange(event, 'location')} />
+                    <input type='text' placeholder="location" value={this.state.newSurvey.location} 
+                    onChange={(event) => this.handleNameChange(event, 'location')} />
                     <br></br>
                     <br></br>
                     <label>Enter Time</label>
-                    <input type='date' placeholder="date" value={this.state.newSurvey.date} onChange={(event) => this.handleNameChange(event, 'date')} />
+                    <input type='date' placeholder="date" value={this.state.newSurvey.date} 
+                    onChange={(event) => this.handleNameChange(event, 'date')} />
                     <br></br>
                     <br></br>
                     <label>Enter Date</label>
-                    <input type='time' placeholder="time" value={this.state.newSurvey.time} onChange={(event) => this.handleNameChange(event, 'time')} />
+                    <input type='time' placeholder="time" value={this.state.newSurvey.time} 
+                    onChange={(event) => this.handleNameChange(event, 'time')} />
                     <br></br>
                     <br></br>
                     <button onClick={this.addNewSurvey}>NEXT</button>

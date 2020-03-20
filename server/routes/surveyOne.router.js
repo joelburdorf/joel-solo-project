@@ -3,13 +3,17 @@ const pool = require('../modules/pool');
 const router = express.Router();
 
 router.post('/', (req, res) => {
-    console.log('req.body.payload.race', req.body.payload.race);
-    console.log('req.body.payload.ethnicity', req.body.payload.ethnicity);
-    console.log('req.body.payload.group', req.body.payload.group);
     const newSurvey = req.body.payload;
-    const queryText = `INSERT INTO survey ("race", "ethnicity", "group")
-                    VALUES ($1, $2, $3)`;
+    const queryText = `INSERT INTO survey 
+                    ("location", "date", "time", "name", "age group", "gender", "race", "ethnicity", "group")
+                    VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9)`;
     const queryValues = [
+        newSurvey.location,
+        newSurvey.date,
+        newSurvey.time,
+        newSurvey.name,
+        newSurvey.age,
+        newSurvey.gender,
         newSurvey.race,
         newSurvey.ethnicity,
         newSurvey.group,

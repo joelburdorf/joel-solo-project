@@ -1,14 +1,28 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-
 class SurveyPageTwo extends Component {
     state = {
         newSurvey: {
+            location: '',
+            date: '',
+            time: '',
             name: '',
             age: '',
             gender: '',
         }
+    }
+
+    componentDidMount = () => {
+        this.props.location.newSurvey &&
+        this.setState({
+            newSurvey:{
+                ...this.state.newSurvey,
+                location: this.props.location.newSurvey.location,
+                date: this.props.location.newSurvey.date,
+                time: this.props.location.newSurvey.time,
+            }
+        })
     }
 
     handleNameChange = (event, param) => {
@@ -21,19 +35,13 @@ class SurveyPageTwo extends Component {
         });
     }
 
-    addNewSurvey = event => {
+    addNewSurvey = (event) => {
         event.preventDefault();
-        this.props.dispatch({ type: 'INPUT_SURVEY_P_TWO', payload: this.state.newSurvey })
-        console.log('in SurveyPageTwo adNewSurvey', this.state.newSurvey);
-        this.setState({
-            newSurvey: {
-                name: '',
-                age: '',
-                gender: '',
-            }
+        this.props.history.push({
+            pathname: '/surveyPageThree',
+            newSurvey: this.state.newSurvey
         });
-        this.props.history.push('/surveyPageThree')
-    }
+    };
 
     render() {
         return (
