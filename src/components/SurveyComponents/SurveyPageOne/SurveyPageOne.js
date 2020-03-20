@@ -25,7 +25,7 @@ class SurveyPageOne extends Component {
 
     addNewSurvey = event => {
         event.preventDefault();
-        this.props.dispatch({ type: 'INPUT_SURVEY_ONE', payload: this.state.newSurvey })
+        this.props.dispatch({ type: 'INPUT_SURVEY_P_ONE', payload: this.state.newSurvey })
         console.log('in adNewSurvey', this.state.newSurvey);
         
         this.setState({
@@ -44,7 +44,7 @@ class SurveyPageOne extends Component {
             <div>
                 <p>SurveyPageOne inputs go here</p>
                 
-              <form onSubmit={this.addNewSurvey}>
+              <form>
                   <label>Enter Location</label>
                     <input type='text' placeholder="location" value={this.state.newSurvey.location} onChange={(event) => this.handleNameChange(event, 'location')} />
                     <br></br>
@@ -57,9 +57,8 @@ class SurveyPageOne extends Component {
                     <input type='time' placeholder="time" value={this.state.newSurvey.time} onChange={(event) => this.handleNameChange(event, 'time')} />
                     <br></br>
                     <br></br>
-                    <input type='submit' value='NEXT' />
+                    <button onClick={this.addNewSurvey}>NEXT</button>
                 </form>
-
             </div>
         )
     }

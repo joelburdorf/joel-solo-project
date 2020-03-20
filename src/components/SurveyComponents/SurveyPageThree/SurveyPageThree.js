@@ -25,7 +25,7 @@ class SurveyPageThree extends Component {
 
     addNewSurvey = event => {
         event.preventDefault();
-        this.props.dispatch({ type: 'INPUT_SURVEY_ONE', payload: this.state.newSurvey })
+        this.props.dispatch({ type: 'INPUT_SURVEY_P_THREE', payload: this.state.newSurvey })
         console.log('in SurveyPageThree adNewSurvey', this.state.newSurvey);
 
         this.setState({
@@ -84,8 +84,6 @@ class SurveyPageThree extends Component {
                     <button onClick={this.addNewSurvey}>Submit Survey</button>
                    
                 </form>
-
-                {/* <button onClick={this.goToSurveySummary}>SUBMIT</button> */}
 
             </div>
         )

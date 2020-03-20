@@ -8,7 +8,6 @@ class SurveyPageTwo extends Component {
             name: '',
             age: '',
             gender: '',
-
         }
     }
 
@@ -24,15 +23,13 @@ class SurveyPageTwo extends Component {
 
     addNewSurvey = event => {
         event.preventDefault();
-        this.props.dispatch({ type: 'INPUT_SURVEY_ONE', payload: this.state.newSurvey })
+        this.props.dispatch({ type: 'INPUT_SURVEY_P_TWO', payload: this.state.newSurvey })
         console.log('in SurveyPageTwo adNewSurvey', this.state.newSurvey);
-
         this.setState({
             newSurvey: {
                 name: '',
                 age: '',
                 gender: '',
-
             }
         });
         this.props.history.push('/surveyPageThree')
@@ -71,10 +68,7 @@ class SurveyPageTwo extends Component {
                     <br></br>
                     <br></br>
                     <button onClick={this.addNewSurvey}>NEXT</button>
-                    {/* <input type='submit' value='NEXT' /> */}
                 </form>
-              
-
             </div>
         )
     }
