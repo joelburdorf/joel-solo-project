@@ -3,14 +3,13 @@ import { combineReducers } from 'redux';
 const surveyOneReducer = (state = [], action) => {
 
     switch (action.type) {
-        case 'GET_USER_ADMIN':
+        case 'SET_SURVEY_ID':
             return action.payload;
         default:
             return state;
     }
     
 };
-
 
 export default combineReducers({
     surveyOneReducer,

@@ -16,7 +16,7 @@ router.post('/', (req, res) => {
     const newSurvey = req.body.payload;
     const queryText = `INSERT INTO survey 
                     ("location", "date", "time", "name", "age group", "gender", "race", "ethnicity", "group")
-                    VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9)`;
+                    VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING id`;
     const queryValues = [
         newSurvey.location,
         newSurvey.date,
@@ -29,11 +29,23 @@ router.post('/', (req, res) => {
         newSurvey.group,
     ];
     pool.query(queryText, queryValues)
-        .then(() => { res.sendStatus(201); })
+        .then(result => {
+            res.send(result);
+        })
         .catch((err) => {
             console.log('Error completing INSERT query', err);
             res.sendStatus(500);
         });
 });
+
+// In the.then you can send the response back to your saga.Instead of doing:
+// .then(result => {
+//     res.sendStatus(201);
+// })
+
+// you would do:
+// .then(result => {
+//     res.send(result);
+// })
 
 module.exports = router;

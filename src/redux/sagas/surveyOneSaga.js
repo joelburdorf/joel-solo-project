@@ -16,8 +16,15 @@ function* fetchSurvey() {
 function* postSurvey(action) {
     yield console.log('action inside of post, postSurvey', action);
     try {
-        yield Axios.post('/api/survey_one', action);
-    } catch (error) {
+       let response = yield Axios.post('/api/survey_one', action);
+        let surveyId = response.data.rows[0].id;
+        console.log('in postSurvey, surveyId', surveyId);
+        yield put({
+            type: 'SET_SURVEY_ID', payload: surveyId
+        })
+        
+    } 
+    catch (error) {
         console.log(error);
     }
 }
