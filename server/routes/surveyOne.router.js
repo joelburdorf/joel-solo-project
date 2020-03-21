@@ -2,8 +2,9 @@ const express = require('express');
 const pool = require('../modules/pool');
 const router = express.Router();
 
-router.get('/last', (req, res) => {
-    const queryText = 'SELECT * FROM "survey"';
+router.get('/last/:id', (req, res) => {
+    let surveyId = req.params.id
+    const queryText = `SELECT * FROM "survey" WHERE "id" = '${surveyId}';`;
     pool.query(queryText)
         .then((result) => { res.send(result.rows); })
         .catch((err) => {
@@ -38,14 +39,6 @@ router.post('/', (req, res) => {
         });
 });
 
-// In the.then you can send the response back to your saga.Instead of doing:
-// .then(result => {
-//     res.sendStatus(201);
-// })
 
-// you would do:
-// .then(result => {
-//     res.send(result);
-// })
 
 module.exports = router;

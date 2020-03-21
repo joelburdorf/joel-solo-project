@@ -46,7 +46,7 @@ class SurveyPageTwo extends Component {
     render() {
         return (
             <div>
-                <p>SurveyPageTwo inputs go here</p>
+                <p><b>Survey Page Two</b></p>
                 <form>
                     <label>Enter Name:</label>
                     <input type='text' placeholder="optional" value={this.state.newSurvey.name} 
@@ -56,6 +56,7 @@ class SurveyPageTwo extends Component {
                     <label>
                         Select Age:
                          <select value={this.state.value} onChange={(event) => this.handleNameChange(event, 'age')}>
+                            <option>Choose Selection</option>
                             <option value="0-17">0-17</option>
                             <option value="18-25">18-25</option>
                             <option value="26-39">26-30</option>
@@ -68,6 +69,7 @@ class SurveyPageTwo extends Component {
                     <label>
                         Select Gender:
                          <select value={this.state.value} onChange={(event) => this.handleNameChange(event, 'gender')}>
+                            <option>Choose Selection</option>
                             <option value="Male">Male</option>
                             <option value="Female">Female</option>
                             <option value="Other">Other</option>

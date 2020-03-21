@@ -57,6 +57,7 @@ class SurveyPageThree extends Component {
                     <label>
                         Select Race:
                          <select value={this.state.value} onChange={(event) => this.handleNameChange(event, 'race')}>
+                            <option>Choose Selection</option>
                             <option value="American Indian">American Indian</option>
                             <option value="Afican">Afican</option>
                             <option value="Afican American">Afican American</option>
@@ -71,6 +72,7 @@ class SurveyPageThree extends Component {
                     <label>
                         Select Ethnicity:
                          <select value={this.state.value} onChange={(event) => this.handleNameChange(event, 'ethnicity')}>
+                            <option>Choose Selection</option>
                             <option value="Hispanic/Latino">Hispanic/Latino</option>
                             <option value="Non-Hispanic/Non-Latino">Non-Hispanic/Non-Latino</option>
                         </select>
@@ -80,6 +82,7 @@ class SurveyPageThree extends Component {
                     <label>
                         Select Group:
                          <select value={this.state.value} onChange={(event) => this.handleNameChange(event, 'group')}>
+                            <option>Choose Selection</option>
                             <option value="Individual">Individual</option>
                             <option value="Couple">Couple</option>
                             <option value="Family">Family</option>

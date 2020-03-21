@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
 
-const surveyOneReducer = (state = [], action) => {
+const surveyOneId = (state = [], action) => {
 
     switch (action.type) {
         case 'SET_SURVEY_ID':
@@ -11,6 +11,17 @@ const surveyOneReducer = (state = [], action) => {
     
 };
 
+const surveyOneLastSurvey = (state = [], action) => {
+    switch (action.type) {
+        case 'SET_SURVEY':
+            return action.payload;
+        default:
+            return state;
+    }
+
+};
+
 export default combineReducers({
-    surveyOneReducer,
+    surveyOneId,
+    surveyOneLastSurvey,
 });

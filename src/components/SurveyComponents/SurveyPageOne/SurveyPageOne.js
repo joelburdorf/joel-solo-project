@@ -36,18 +36,19 @@ class SurveyPageOne extends Component {
     render() {
         return (
             <div>
+                <p><b>Survey Page One</b></p>
               <form>
-                  <label>Enter Location</label>
+                    <label>Enter Location</label>
                     <input type='text' placeholder="location" value={this.state.newSurvey.location} 
                     onChange={(event) => this.handleNameChange(event, 'location')} />
                     <br></br>
                     <br></br>
-                    <label>Enter Time</label>
+                    <label>Enter Date</label>
                     <input type='date' placeholder="date" value={this.state.newSurvey.date} 
                     onChange={(event) => this.handleNameChange(event, 'date')} />
                     <br></br>
                     <br></br>
-                    <label>Enter Date</label>
+                    <label>Enter Time</label>
                     <input type='time' placeholder="time" value={this.state.newSurvey.time} 
                     onChange={(event) => this.handleNameChange(event, 'time')} />
                     <br></br>
