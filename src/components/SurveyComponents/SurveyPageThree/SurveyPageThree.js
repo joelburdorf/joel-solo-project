@@ -17,7 +17,6 @@ class SurveyPageThree extends Component {
         }
     }
     componentDidMount = () => {
-
         this.props.location.newSurvey &&
             this.setState({
                 newSurvey: {
@@ -33,7 +32,6 @@ class SurveyPageThree extends Component {
     }
 
     handleNameChange = (event, param) => {
-        // console.log('event happended in handleChange', event)
         this.setState({
             newSurvey: {
                 ...this.state.newSurvey,

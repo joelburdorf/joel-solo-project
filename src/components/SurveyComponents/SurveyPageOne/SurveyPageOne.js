@@ -13,7 +13,7 @@ class SurveyPageOne extends Component {
     }
 
     handleNameChange = (event, param) => {
-        // console.log('event happended in handleChange', event)
+
         this.setState({
             newSurvey: {
                 ...this.state.newSurvey,
@@ -25,41 +25,17 @@ class SurveyPageOne extends Component {
     //pass props with object to path /details
     addNewSurvey = (event) => {
         event.preventDefault();
-        console.log('surveyPageOne newSurvey', this.state.newSurvey.location);
-        console.log('surveyPageOne newSurvey', this.state.newSurvey.date);
-        console.log('surveyPageOne newSurvey', this.state.newSurvey.time);
-        
         this.props.history.push({
             pathname: '/surveyPageTwo',
             newSurvey: this.state.newSurvey
-                // location: this.state.newSurvey.location,
-                // date: this.state.newSurvey.date,
-                // time: this.state.newSurvey.time,
+
             
         });
     };
 
-    // addNewSurvey = event => {
-    //     event.preventDefault();
-    //     this.props.dispatch({ type: 'INPUT_SURVEY_P_ONE', payload: this.state.newSurvey })
-    //     console.log('in adNewSurvey', this.state.newSurvey);
-        
-    //     this.setState({
-    //         newSurvey: {
-    //             location: '',
-    //             date: '',
-    //             time: '',
-               
-    //         }
-    //     });
-    //     this.props.history.push('/surveyPageTwo')
-    // }
-
     render() {
         return (
             <div>
-                <p>SurveyPageOne inputs go here</p>
-                
               <form>
                   <label>Enter Location</label>
                     <input type='text' placeholder="location" value={this.state.newSurvey.location} 
