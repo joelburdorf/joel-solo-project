@@ -55,12 +55,12 @@ class SurveyPageThree extends Component {
             <div>
                 <form>
                     <label>
-                        Select Race:
+                       <b>Race:</b>
                          <select value={this.state.value} onChange={(event) => this.handleNameChange(event, 'race')}>
                             <option>Choose Selection</option>
                             <option value="American Indian">American Indian</option>
-                            <option value="Afican">Afican</option>
-                            <option value="Afican American">Afican American</option>
+                            <option value="African">African</option>
+                            <option value="African American">African American</option>
                             <option value="Asian">Asian</option>
                             <option value="Native Hawaiian">Native Hawaiian</option>
                             <option value="White/Caucasian">White/Caucasian</option>
@@ -70,7 +70,7 @@ class SurveyPageThree extends Component {
                     <br></br>
                     <br></br>
                     <label>
-                        Select Ethnicity:
+                        <b>Ethnicity:</b>
                          <select value={this.state.value} onChange={(event) => this.handleNameChange(event, 'ethnicity')}>
                             <option>Choose Selection</option>
                             <option value="Hispanic/Latino">Hispanic/Latino</option>
@@ -80,7 +80,7 @@ class SurveyPageThree extends Component {
                     <br></br>
                     <br></br>
                     <label>
-                        Select Group:
+                        <b>Group:</b>
                          <select value={this.state.value} onChange={(event) => this.handleNameChange(event, 'group')}>
                             <option>Choose Selection</option>
                             <option value="Individual">Individual</option>
@@ -91,7 +91,7 @@ class SurveyPageThree extends Component {
                     </label>
                     <br></br>
                     <br></br>
-                    <button onClick={this.addNewSurvey}>Submit Survey</button>
+                    <button onClick={this.addNewSurvey}><b>Submit Survey</b></button>
                 </form>
             </div>
         )

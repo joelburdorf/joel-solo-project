@@ -48,13 +48,13 @@ class SurveyPageTwo extends Component {
             <div>
                 <p><b>Survey Page Two</b></p>
                 <form>
-                    <label>Enter Name:</label>
+                    <label><b>Name:</b></label>
                     <input type='text' placeholder="optional" value={this.state.newSurvey.name} 
                         onChange={(event) => this.handleNameChange(event, 'name')} />
                     <br></br>
                     <br></br>
                     <label>
-                        Select Age:
+                        <b>Age:</b>
                          <select value={this.state.value} onChange={(event) => this.handleNameChange(event, 'age')}>
                             <option>Choose Selection</option>
                             <option value="0-17">0-17</option>
@@ -67,7 +67,7 @@ class SurveyPageTwo extends Component {
                     <br></br>
                     <br></br>
                     <label>
-                        Select Gender:
+                        <b>Gender:</b>
                          <select value={this.state.value} onChange={(event) => this.handleNameChange(event, 'gender')}>
                             <option>Choose Selection</option>
                             <option value="Male">Male</option>
@@ -77,7 +77,7 @@ class SurveyPageTwo extends Component {
                     </label>
                     <br></br>
                     <br></br>
-                    <button onClick={this.addNewSurvey}>NEXT</button>
+                    <button onClick={this.addNewSurvey}><b>NEXT</b></button>
                 </form>
             </div>
         )

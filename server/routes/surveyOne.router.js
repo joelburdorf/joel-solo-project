@@ -16,7 +16,7 @@ router.get('/last/:id', (req, res) => {
 router.post('/', (req, res) => {
     const newSurvey = req.body.payload;
     const queryText = `INSERT INTO survey 
-                    ("location", "date", "time", "name", "age group", "gender", "race", "ethnicity", "group")
+                    ("location", "date", "time", "name", "age", "gender", "race", "ethnicity", "group")
                     VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING id`;
     const queryValues = [
         newSurvey.location,
