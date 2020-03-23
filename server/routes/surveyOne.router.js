@@ -39,6 +39,23 @@ router.post('/', (req, res) => {
         });
 });
 
+router.put('/new_name/:id', (req, res) => {
+    console.log('IN PUT WITH: req.body', req.body);
+    console.log('in PUT: req.params', req.params);
+    //create SQL query to UPDATE title/description for id
+    let id = req.params.id;
+    let newName = req.body.name;
+    const queryText = `UPDATE survey SET "name" = '${newName}' WHERE id='${id}';`;
+    pool.query(queryText)
+        .then(() => {
+            res.sendStatus(200);
+        })
+        .catch(err => {
+            console.log("Error changing surveyName", err);
+            res.sendStatus(500);
+        });
+})
+
 
 
 module.exports = router;

@@ -4,7 +4,8 @@ import { connect } from 'react-redux';
 
 class SurveyEditName extends Component {
     state = {
-          name: '',  
+          name: '',
+          id: this.props.reduxState.surveyOne.surveyOneId, 
     }
 
     handleNameChange = (event, param) => {
@@ -18,10 +19,10 @@ class SurveyEditName extends Component {
 
     editName = event => {
         event.preventDefault();
-        this.props.dispatch({ type: 'UPDATE_NAME', payload: this.state.name })
-        console.log('in SurveyEditName editName', this.state.name);
+        this.props.dispatch({ type: 'UPDATE_NAME', payload: this.state })
+        console.log('state in editName', this.state);
         this.setState({
-            name: this.state.name,
+            name: this.state,
         });
         this.props.history.push('/surveySummary')
     }

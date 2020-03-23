@@ -33,7 +33,7 @@ class SurveyEdit extends Component {
                     {this.props.reduxState.surveyOne.surveyOneLastSurvey.map(info => (<li key={info.id}>
                         <label><b>Location:</b></label> {info.location} <button onClick={this.editItem}>Edit</button><br /><br />
                         <label><b>Date</b></label>  {info.date} <button onClick={this.editItem}>Edit</button><br /><br />
-                        <label><b>Name:</b></label>  {info.name}<button onClick={this.editName}>Edit ME</button> <br /><br />
+                        <label><b>Name:</b></label>  {info.name}<button onClick={this.editName}>Edit</button> <br /><br />
                         <label><b>Age:</b></label>  {info.age} <button onClick={this.editItem}>Edit</button><br /><br />
                         <label><b>Gender:</b></label>  {info.gender}<button onClick={this.editItem}>Edit</button><br /><br />
                         <label><b>Race:</b></label>  {info.race}<button onClick={this.editItem}>Edit</button><br /><br />

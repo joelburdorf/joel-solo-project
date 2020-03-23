@@ -5,6 +5,18 @@ import { put, takeEvery } from 'redux-saga/effects';
 function* surveyOneSaga() {
     yield takeEvery('INPUT_SURVEY', postSurvey);
     yield takeEvery('FETCH_LAST_SURVEY', fetchSurvey);
+    yield takeEvery('UPDATE_NAME', updateSurveyName);
+}
+
+function* updateSurveyName(action) {
+    console.log('in updateSurveyName saga, action.payload', action.payload);
+    let lastSurveyId = action.payload.id
+    try {
+        yield Axios.put(`/api/survey_one/new_name/${lastSurveyId}`, action.payload);
+        // yield put({ type: "SET_SURVEY" });
+    } catch (error) {
+        console.log(error);
+    }
 }
 
 function* fetchSurvey(action) {
