@@ -32,7 +32,7 @@ class SurveySummary extends Component {
     // }
 
       complete = () => {
-        this.props.history.push('/Home')
+          this.props.history.push("/allSurveys")
     }
 
     render() {
