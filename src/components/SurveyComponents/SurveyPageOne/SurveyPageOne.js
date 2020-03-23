@@ -27,9 +27,7 @@ class SurveyPageOne extends Component {
         event.preventDefault();
         this.props.history.push({
             pathname: '/surveyPageTwo',
-            newSurvey: this.state.newSurvey
-
-            
+            newSurvey: this.state.newSurvey 
         });
     };
 
