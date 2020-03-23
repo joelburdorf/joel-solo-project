@@ -27,6 +27,7 @@ import SurveyPageTwo from '../SurveyComponents/SurveyPageTwo/SurveyPageTwo';
 import SurveyPageThree from '../SurveyComponents/SurveyPageThree/SurveyPageThree';
 import SurveySummary from '../SurveyComponents/SurveySummary/SurveySummary';
 import SurveyEdit from '../SurveyComponents/SurveyEdit/SurveyEdit';
+import SurveyEditName from '../SurveyComponents/SurveyEditName/SurveyEditName';
 
 
 import './App.css';
@@ -111,6 +112,11 @@ class App extends Component {
               exact
               path="/surveyEdit"
               component={SurveyEdit}
+            />
+            <ProtectedRoute
+              exact
+              path="/surveyEditName"
+              component={SurveyEditName}
             />
             {/* If none of the other routes matched, we will show a 404. */}
             <Route render={() => <h1>404</h1>} />
