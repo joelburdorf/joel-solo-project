@@ -17,6 +17,9 @@ class AdminUser extends Component {
         console.log('in deleteUser', id);
         this.props.dispatch({ type: 'DELETE_ADMIN_USERS', payload: id })
     }
+    admin = () => {
+        this.props.history.push("/adminhome")
+    }
 
     render() {
         return (
@@ -28,6 +31,7 @@ class AdminUser extends Component {
                         <button onClick={(event) => this.deleteAdminUser(event, user.id)}>Delete</button></li>))}
 
                 </ul>
+                <button onClick={this.admin}>Admin Page</button>
 
                 {/* <pre>{JSON.stringify(this.props.reduxState.admin.userAdminAccessReducer)}</pre> */}
             </div>
