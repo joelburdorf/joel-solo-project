@@ -27,8 +27,8 @@ class AdminUser extends Component {
                 <p><b>Current Users:</b></p> 
 
                 <ul>
-                    {this.props.reduxState.admin.userAdminAccessReducer.map(user => (<li key={user.id}>{user.username}   
-                        <button onClick={(event) => this.deleteAdminUser(event, user.id)} >Delete</button></li>))}
+                    {this.props.reduxState.admin.userAdminAccessReducer.map(user => (<li key={user.id}><b>{user.username}</b>   
+                        <button onClick={(event) => this.deleteAdminUser(event, user.id)}><b>Delete</b></button></li>))}
 
                 </ul>
                 <br></br>
