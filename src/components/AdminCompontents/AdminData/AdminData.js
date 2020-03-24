@@ -20,7 +20,7 @@ class AdminData extends Component {
     render() {
         return (
             <div>
-                <p><b>Statistics</b></p>
+                <p><b>Statistics:</b></p>
                 {/* <h3>{this.props.reduxState.admin.totalSurveyedReducer[0]}</h3> */}
                 <ul>
                     {this.props.reduxState.admin.totalSurveyedReducer.map(total => (<li key={total.id}>
