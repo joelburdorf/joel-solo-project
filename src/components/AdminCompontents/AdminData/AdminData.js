@@ -19,7 +19,7 @@ class AdminData extends Component {
 
     render() {
         return (
-            <div>
+            <div className="center">
                 <p><b>Statistics:</b></p>
                 {/* <h3>{this.props.reduxState.admin.totalSurveyedReducer[0]}</h3> */}
                 <ul>
@@ -28,7 +28,7 @@ class AdminData extends Component {
                 </ul>
                 <br></br>
                 <br></br>
-                <button onClick={this.admin}>Admin Page</button>
+                <button onClick={this.admin}><b>Admin Page</b></button>
             </div>
         )
     }

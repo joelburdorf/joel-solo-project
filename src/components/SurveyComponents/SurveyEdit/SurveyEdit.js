@@ -27,7 +27,7 @@ class SurveyEdit extends Component {
 
     render() {
         return (
-            <div>
+            <div className="center">
                 <p><b>Survey Edit</b></p>
                 <ul>
                     {this.props.reduxState.surveyOne.surveyOneLastSurvey.map(info => (<li key={info.id}>
@@ -41,7 +41,7 @@ class SurveyEdit extends Component {
                         <label><b>Group:</b></label>  {info.group}<button onClick={this.editItem}>Edit</button><br /><br />
                     </li>))}
                 </ul>
-                <button onClick={this.complete}>Complete</button>
+                <button onClick={this.complete}><b>Complete</b></button>
             </div>
         )
     }

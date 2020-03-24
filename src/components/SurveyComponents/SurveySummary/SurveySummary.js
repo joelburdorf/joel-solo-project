@@ -27,9 +27,11 @@ class SurveySummary extends Component {
 
     render() {
          return (
-            <div>
+             <div className="center">
                 <p><b>Survey Summary</b></p>
-                <button onClick={this.getLastSurvey}>Update Summary</button>
+                 <button onClick={this.getLastSurvey}><b>Update Summary</b></button>
+                <br></br>
+                <br></br>
                 <ul>
                     {this.props.reduxState.surveyOne.surveyOneLastSurvey.map(info => (<li key={info.id}>
                         <label><b>Location:</b></label> {info.location}<br /><br />
@@ -40,8 +42,8 @@ class SurveySummary extends Component {
                         <label><b>Race:</b></label>  {info.race} <br /><br />
                         <label><b>Ethnicity:</b></label>  {info.ethnicity} <br /><br />
                         <label><b>Group:</b></label>  {info.group} <br /><br />
-                        <button onClick={this.edit}>Edit</button>
-                        <button onClick={this.complete}>Complete</button>
+                        <button onClick={this.edit}><b>Edit</b></button>
+                        <button onClick={this.complete}><b>Complete</b></button>
                        </li>))}
                 </ul>
             </div>

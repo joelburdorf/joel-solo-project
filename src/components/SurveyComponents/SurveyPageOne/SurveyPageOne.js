@@ -33,9 +33,9 @@ class SurveyPageOne extends Component {
 
     render() {
         return (
-            <div>
+            <div className="center">
                 <p><b>Survey Page One</b></p>
-              <form>
+              <form className="form">
                     <label><b>Location:</b></label>
                     <input type='text' placeholder="location" value={this.state.newSurvey.location} 
                     onChange={(event) => this.handleNameChange(event, 'location')} />

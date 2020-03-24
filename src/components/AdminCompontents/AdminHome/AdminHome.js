@@ -20,14 +20,15 @@ class AdminHome extends Component {
 
     render() {
         return (
-            <div>
-                <button onClick={this.getData}>DATA</button>
+            <div className="center">
+                <br></br>
+                <button className="link-button" onClick={this.getData}><b>DATA</b></button>
                 <br></br>
                 <br></br>
-                <button onClick={this.getUserAccounts}>USER ACCOUNTS</button>
+            <button className="link-button" onClick={this.getUserAccounts}><b>USER ACCOUNTS</b></button>
                 <br></br>
                 <br></br>
-                <button onClick={this.takeSurvey}>SURVEYS</button>
+            <button className="link-button" onClick={this.takeSurvey}><b>SURVEYS</b></button>
                 <br></br>
             </div>
 

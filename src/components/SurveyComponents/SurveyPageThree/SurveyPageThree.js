@@ -52,8 +52,9 @@ class SurveyPageThree extends Component {
 
     render() {
         return (
-            <div>
-                <form>
+            <div className="center">
+                <p><b>Survey Page Three</b></p>
+                <form className="form">
                     <label>
                        <b>Race:</b>
                          <select value={this.state.value} onChange={(event) => this.handleNameChange(event, 'race')}>

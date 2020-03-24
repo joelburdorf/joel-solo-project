@@ -23,15 +23,16 @@ class AdminUser extends Component {
 
     render() {
         return (
-            <div>
+            <div className="center">
                 <p><b>Current Users:</b></p> 
 
                 <ul>
-                    {this.props.reduxState.admin.userAdminAccessReducer.map(user => (<li key={user.id}>{user.username}
-                        <button onClick={(event) => this.deleteAdminUser(event, user.id)}>Delete User</button></li>))}
+                    {this.props.reduxState.admin.userAdminAccessReducer.map(user => (<li key={user.id}>{user.username}   
+                        <button onClick={(event) => this.deleteAdminUser(event, user.id)} >Delete</button></li>))}
 
                 </ul>
-                <button onClick={this.admin}>Admin Page</button>
+                <br></br>
+                <button onClick={this.admin}><b>Admin Page</b></button>
 
                 {/* <pre>{JSON.stringify(this.props.reduxState.admin.userAdminAccessReducer)}</pre> */}
             </div>

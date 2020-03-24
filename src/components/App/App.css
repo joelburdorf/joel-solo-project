@@ -1,6 +1,18 @@
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0px;
+    background-color: bisque;
+}
+.form {
+    background-color: coral;
+}
+.center{
+text-align: center;
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
 }
 
 .alert {
