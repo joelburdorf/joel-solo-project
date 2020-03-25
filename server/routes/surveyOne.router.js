@@ -1,8 +1,9 @@
 const express = require('express');
 const pool = require('../modules/pool');
 const router = express.Router();
+const { rejectUnauthenticated } = require('../modules/authentication-middleware');
 
-router.get('/last/:id', (req, res) => {
+router.get('/last/:id', rejectUnauthenticated,(req, res) => {
     let surveyId = req.params.id
     const queryText = `SELECT * FROM "survey" WHERE "id" = '${surveyId}';`;
     pool.query(queryText)
@@ -13,7 +14,7 @@ router.get('/last/:id', (req, res) => {
         });
 });
 
-router.post('/', (req, res) => {
+router.post('/', rejectUnauthenticated, (req, res) => {
     const newSurvey = req.body.payload;
     const queryText = `INSERT INTO survey 
                     ("location", "date", "time", "name", "age", "gender", "race", "ethnicity", "group")
@@ -39,7 +40,7 @@ router.post('/', (req, res) => {
         });
 });
 
-router.put('/new_name/:id', (req, res) => {
+router.put('/new_name/:id', rejectUnauthenticated, (req, res) => {
     console.log('IN PUT WITH: req.body', req.body);
     console.log('in PUT: req.params', req.params);
     //create SQL query to UPDATE title/description for id

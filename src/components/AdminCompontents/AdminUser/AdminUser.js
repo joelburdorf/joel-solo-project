@@ -25,7 +25,6 @@ class AdminUser extends Component {
         return (
             <div className="center">
                 <p><b>Current Users:</b></p> 
-
                 <ul>
                     {this.props.reduxState.admin.userAdminAccessReducer.map(user => (<li key={user.id}><b>{user.username}</b>   
                         <button onClick={(event) => this.deleteAdminUser(event, user.id)}><b>Delete</b></button></li>))}
@@ -39,10 +38,6 @@ class AdminUser extends Component {
         )
     }
 }
-
-
-
-
 
 // Makes our reducers available in our component
 const mapReduxStateToProps = (reduxState) => ({

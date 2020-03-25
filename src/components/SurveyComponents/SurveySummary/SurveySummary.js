@@ -3,15 +3,14 @@ import { connect } from 'react-redux';
 
 
 class SurveySummary extends Component {
-
+    
+   //componentDidUpdate works, but creates a loop calling getLastSurvey  repeatedly
     // componentDidUpdate() {
-    //     this.props.reduxState.surveyOne.surveyOneId &&
     //     this.getLastSurvey();
-    //     // use component did mount to dispatch an action to request the userlist from the API
+    //     
     // }
 
     getLastSurvey = () => {
-        this.props.reduxState.surveyOne.surveyOneId &&
         this.props.dispatch({ type: 'FETCH_LAST_SURVEY', 
             payload: this.props.reduxState.surveyOne.surveyOneId 
         });
@@ -33,7 +32,8 @@ class SurveySummary extends Component {
                 <br></br>
                 <br></br>
                 <ul>
-                    {this.props.reduxState.surveyOne.surveyOneLastSurvey.map(info => (<li key={info.id}>
+                     {this.props.reduxState.surveyOne.surveyOneLastSurvey &&
+                    this.props.reduxState.surveyOne.surveyOneLastSurvey.map(info => (<li key={info.id}>
                         <label><b>Location:</b></label> {info.location}<br /><br />
                         <label><b>Date</b></label>  {info.date} <br /><br />
                         <label><b>Name:</b></label>  {info.name} <br /><br />

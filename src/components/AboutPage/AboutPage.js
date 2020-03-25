@@ -9,7 +9,7 @@ const AboutPage = () => (
   <div>
     <div >
       <p className="indent">
-      St Stevens, a non-profit working in South Minneapolis, provides resources and outreach services to people sleeping outside. Twice a year outreach workers are tasked with conducting a count of all the people sleeping in cars, under bridges, in parks and openly on sidewalks in our community.
+      St. Stevens, a non-profit working in South Minneapolis, provides resources and outreach services to people sleeping outside. Twice a year outreach workers are tasked with conducting a count of all the people sleeping in cars, under bridges, in parks and openly on sidewalks in our community.
       </p>
  
       <p className="indent">  

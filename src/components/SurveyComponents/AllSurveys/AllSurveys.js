@@ -15,9 +15,9 @@ class AllSurveys extends Component {
                 <p><b>Choose a Survey</b></p>
                 <button onClick={this.goToPageOne}><b>Survey One</b></button>
                 <br></br>
-                <button><b>Survey Two</b></button>
+                <button><b>Survey Two (comming soon)</b></button>
                 <br></br>
-                <button><b>Survey Three</b></button>
+                <button><b>Survey Three (comming soon)</b></button>
 
             </div>
         )
