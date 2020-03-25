@@ -3,13 +3,15 @@ import { connect } from 'react-redux';
 
 
 class SurveyEditName extends Component {
+    // this component is to change the name in state then
+    // call to sagas to change name in the DB for this ID only
+    // id is the RETURNING id for this users last POST of latest survey
     state = {
           name: '',
           id: this.props.reduxState.surveyOne.surveyOneId, 
     }
 
     handleNameChange = (event, param) => {
-        // console.log('event happended in handleChange', event)
         this.setState({
                 ...this.state,
                 [param]: event.target.value,
@@ -20,13 +22,11 @@ class SurveyEditName extends Component {
     editName = event => {
         event.preventDefault();
         this.props.dispatch({ type: 'UPDATE_NAME', payload: this.state })
-        console.log('state in editName', this.state);
         this.setState({
             name: this.state,
         });
         this.props.history.push('/surveySummary')
     }
-
 
     render() {
         return (

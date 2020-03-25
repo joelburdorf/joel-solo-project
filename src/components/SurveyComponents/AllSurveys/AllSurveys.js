@@ -8,7 +8,7 @@ class AllSurveys extends Component {
         console.log('in goToPageOne');
         this.props.history.push('/surveyPageOne')
     }
-
+    // currently only have one survey to offer
     render() {
         return (
             <div className="center">

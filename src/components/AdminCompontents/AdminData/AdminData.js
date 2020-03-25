@@ -8,15 +8,15 @@ class AdminData extends Component {
         this.getTotalSurveyed();
         // use component did mount to dispatch an action to request total rows from survey table
     }
-
+    // GET count of all rows (surveys) from the sagas
     getTotalSurveyed = () => {
         this.props.dispatch({ type: 'FETCH_TOTAL_SURVEYED' });
     }
-
+    // route Admin back to adminHome
     admin = () => {
         this.props.history.push("/adminhome")
     }
-
+    // render to DOM the total count of rows (surveys)
     render() {
         return (
             <div className="center">

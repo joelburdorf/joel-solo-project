@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 
 
 class SurveyPageOne extends Component {
-
+    // taking 3 inputs on this page, then pass them as props
     state = {
         newSurvey: {
             location: '',
@@ -13,7 +13,6 @@ class SurveyPageOne extends Component {
     }
 
     handleNameChange = (event, param) => {
-
         this.setState({
             newSurvey: {
                 ...this.state.newSurvey,
@@ -22,7 +21,7 @@ class SurveyPageOne extends Component {
         });
     }
 
-    //pass props with object to path /details
+    //pass props with object to path /surveyPageTwo
     addNewSurvey = (event) => {
         event.preventDefault();
         this.props.history.push({

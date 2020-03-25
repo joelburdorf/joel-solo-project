@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 class SurveyPageTwo extends Component {
+    // taking 3 addition inputs on this page, then pass them along with
+    // the 3 imputs from surveyPageOne to SurveyPageThree
     state = {
         newSurvey: {
             location: '',
@@ -26,7 +28,6 @@ class SurveyPageTwo extends Component {
     }
 
     handleNameChange = (event, param) => {
-        // console.log('event happended in handleChange', event)
         this.setState({
             newSurvey: {
                 ...this.state.newSurvey,

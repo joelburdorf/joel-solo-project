@@ -1,7 +1,7 @@
 import { combineReducers } from 'redux';
 
+// makes userList available in reduxStore to ADMINs
 const userAdminAccessReducer = (state = [], action) => {
-
     switch (action.type) {
         case 'GET_USER_ADMIN':
             return action.payload;
@@ -9,9 +9,8 @@ const userAdminAccessReducer = (state = [], action) => {
             return state;
     }
 };
-
+// makes count of all surveys available in reduxStoreto ADMINs
 const totalSurveyedReducer = (state = [], action) => {
-
     switch (action.type) {
         case 'GET_TOTAL_SURVEYED_FROM_DB':
             return action.payload;
@@ -19,8 +18,6 @@ const totalSurveyedReducer = (state = [], action) => {
             return state;
     }
 };
-
-
 
 export default combineReducers({
     userAdminAccessReducer,

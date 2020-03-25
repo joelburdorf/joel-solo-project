@@ -4,11 +4,13 @@
     display: inline-block;
     color: #f2f2f2;
     padding-left: 10px;
+    text-align: center;
 }
 
 .nav {
   overflow: hidden;
   background-color: #2600b0;
+  text-align: cen;
 }
 
 .nav-link {

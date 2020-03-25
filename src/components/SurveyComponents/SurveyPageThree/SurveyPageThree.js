@@ -2,6 +2,11 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 class SurveyPageThree extends Component {
+     // taking 3 addition inputs on this page, then pass them along with
+     // the 3 imputs from surveyPageOne and 3 from surveyPageTwo and 
+     // then sending all 9 items in state to sagas to be added to redux
+     // and POST to the DB as a new Survey, RETURNING the ID of that 
+     // survey to be used on the survey summary page
 
     state = {
         newSurvey: {

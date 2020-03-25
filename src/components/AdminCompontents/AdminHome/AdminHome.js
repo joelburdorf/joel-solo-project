@@ -2,19 +2,16 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 class AdminHome extends Component {
-
+    // bring Admin back to the adminData page
    getData=()=>{
-    console.log('in getData');
        this.props.history.push('/adminData')
     }
-
+    // bring Admin back to the adminUser page
     getUserAccounts = () => {
-        console.log('in getUserAccounts');
         this.props.history.push('/adminUser')
     }
-
+    // bring Admin back to the allSurveys page
     takeSurvey = () => {
-        console.log('in takeSurvey');
         this.props.history.push('/allSurveys')
     }
 
@@ -25,13 +22,12 @@ class AdminHome extends Component {
                 <button className="link-button" onClick={this.getData}><b>DATA</b></button>
                 <br></br>
                 <br></br>
-            <button className="link-button" onClick={this.getUserAccounts}><b>USER ACCOUNTS</b></button>
+                <button className="link-button" onClick={this.getUserAccounts}><b>USER ACCOUNTS</b></button>
                 <br></br>
                 <br></br>
-            <button className="link-button" onClick={this.takeSurvey}><b>SURVEYS</b></button>
+                 <button className="link-button" onClick={this.takeSurvey}><b>SURVEYS</b></button>
                 <br></br>
             </div>
-
         )}
 }
 

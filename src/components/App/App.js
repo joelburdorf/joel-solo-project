@@ -16,11 +16,11 @@ import ProtectedRoute from '../ProtectedRoute/ProtectedRoute'
 import AboutPage from '../AboutPage/AboutPage';
 import UserPage from '../UserPage/UserPage';
 import InfoPage from '../InfoPage/InfoPage';
-
+// all Admin-only related routes
 import AdminHome from '../AdminCompontents/AdminHome/AdminHome';
 import AdminUser from '../AdminCompontents/AdminUser/AdminUser';
 import AdminData from '../AdminCompontents/AdminData/AdminData';
-
+// all survey related routes
 import AllSurveys from '../SurveyComponents/AllSurveys/AllSurveys';
 import SurveyPageOne from '../SurveyComponents/SurveyPageOne/SurveyPageOne';
 import SurveyPageTwo from '../SurveyComponents/SurveyPageTwo/SurveyPageTwo';
@@ -28,7 +28,6 @@ import SurveyPageThree from '../SurveyComponents/SurveyPageThree/SurveyPageThree
 import SurveySummary from '../SurveyComponents/SurveySummary/SurveySummary';
 import SurveyEdit from '../SurveyComponents/SurveyEdit/SurveyEdit';
 import SurveyEditName from '../SurveyComponents/SurveyEditName/SurveyEditName';
-
 
 import './App.css';
 

@@ -3,6 +3,8 @@ const pool = require('../modules/pool');
 const router = express.Router();
 const { rejectUnauthenticated } = require('../modules/authentication-middleware');
 
+// any user can GET their last survey they submited
+// the id is from the RETURNING id from the POST below
 router.get('/last/:id', rejectUnauthenticated,(req, res) => {
     let surveyId = req.params.id
     const queryText = `SELECT * FROM "survey" WHERE "id" = '${surveyId}';`;
@@ -14,6 +16,7 @@ router.get('/last/:id', rejectUnauthenticated,(req, res) => {
         });
 });
 
+// this POST is to create or enter a new survey into the DB
 router.post('/', rejectUnauthenticated, (req, res) => {
     const newSurvey = req.body.payload;
     const queryText = `INSERT INTO survey 
@@ -40,10 +43,11 @@ router.post('/', rejectUnauthenticated, (req, res) => {
         });
 });
 
+// this PUT is so user can update the name of the person in their last survey they submmited
+// the id is from the RETURNING id from the POST above
 router.put('/new_name/:id', rejectUnauthenticated, (req, res) => {
-    console.log('IN PUT WITH: req.body', req.body);
-    console.log('in PUT: req.params', req.params);
-    //create SQL query to UPDATE title/description for id
+    // console.log('IN PUT WITH: req.body', req.body);
+    // console.log('in PUT: req.params', req.params);
     let id = req.params.id;
     let newName = req.body.name;
     const queryText = `UPDATE survey SET "name" = '${newName}' WHERE id='${id}';`;

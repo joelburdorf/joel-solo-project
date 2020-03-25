@@ -4,26 +4,29 @@ import { connect } from 'react-redux';
 
 class SurveySummary extends Component {
     
-   //componentDidUpdate works, but creates a loop calling getLastSurvey  repeatedly
+   //componentDidUpdate works, but creates a loop calling getLastSurvey repeatedly
+
     // componentDidUpdate() {
     //     this.getLastSurvey();
     //     
     // }
 
+    // call to sagas to GET last survey using the RETURNING id from the last POST
     getLastSurvey = () => {
         this.props.dispatch({ type: 'FETCH_LAST_SURVEY', 
             payload: this.props.reduxState.surveyOne.surveyOneId 
         });
     }
-
+    // bring user to edit page
     edit = () => {
         this.props.history.push('/surveyEdit')
     }
-
-      complete = () => {
-          this.props.history.push("/allSurveys")
+    // complete brings user back to all Surveys
+    complete = () => {
+        this.props.history.push("/allSurveys")
     }
-
+    // render on DOM the last survey that the user submmited which was made 
+    // available in reduxStore
     render() {
          return (
              <div className="center">

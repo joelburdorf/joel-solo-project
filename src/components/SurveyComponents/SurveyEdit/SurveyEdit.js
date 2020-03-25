@@ -3,24 +3,18 @@ import { connect } from 'react-redux';
 
 
 class SurveyEdit extends Component {
+    // this page is basically same as the Survey Summary page except
+    // that an edit button is added for each item
 
-    // getLastSurvey = () => {
-    //     this.props.reduxState.surveyOne.surveyOneId &&
-    //         this.props.dispatch({
-    //             type: 'FETCH_LAST_SURVEY',
-    //             payload: this.props.reduxState.surveyOne.surveyOneId
-    //         });
-    // }
-
+    // edit Name will route user to surveyEditName page
     editName = () => {
-        console.log('in editName');
         this.props.history.push("/surveyEditName")
     }
+    // edit item is not being used
     editItem = () => {
         console.log('in editItem');
-       
     }
-
+    // complete brings user back to allSurveys page
     complete = () => {
         this.props.history.push("/allSurveys")
     }
