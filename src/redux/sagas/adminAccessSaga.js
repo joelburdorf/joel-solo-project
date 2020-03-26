@@ -16,7 +16,7 @@ function* fetchUsers() {
 }
 // GET to DB to get all Gender "other" and add them to reduxStore
 function* fetchOther() {
-    const elementResponse = yield Axios.get('/api/admin/other');
+    const elementResponse = yield Axios.get('/api/admin/other'); 
     yield put({ type: 'GET_OTHER', payload: elementResponse.data })
 }
 // GET to DB to get all Gender "female" and add them to reduxStore

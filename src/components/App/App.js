@@ -32,9 +32,6 @@ import SurveyEditName from '../SurveyComponents/SurveyEditName/SurveyEditName';
 import './App.css';
 
 class App extends Component {
-  componentDidMount () {
-    this.props.dispatch({type: 'FETCH_USER'})
-  }
 
   render() {
     return (
