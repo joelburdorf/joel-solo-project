@@ -3,6 +3,7 @@
 -- You must use double quotes in every query that user is in:
 -- ex. SELECT * FROM "user";
 -- Otherwise you will have errors!
+-- need to hard code one user "admin_status" to true for testing Admin access
 
 CREATE TABLE "user" (
     "id" SERIAL PRIMARY KEY,
@@ -22,10 +23,4 @@ CREATE TABLE "survey" (
   "race" VARCHAR(40) NOT NULL,
   "ethnicity" VARCHAR(40) NOT NULL,
   "group" VARCHAR(40) NOT NULL
-);
-
-CREATE TABLE "user_survey" (
-	"id" SERIAL PRIMARY KEY,
-	"user_id" INT REFERENCES "user",
-	"survey_id" INT REFERENCES "survey"
 );
