@@ -17,6 +17,7 @@ class SurveyEditName extends Component {
         });
     }
     // alert user to fill in name
+    // then dispatch name to redux then PUT to DB
     editName = event => {
         event.preventDefault();
             if (this.state.name === '') {
