@@ -4,6 +4,46 @@ const router = express.Router();
 const { rejectUnauthenticated } = require('../modules/authentication-middleware');
 
 // only an admin is able to GET stats from the DB
+// this is a count of total number of gender "other" surveyed
+router.get('/other', rejectUnauthenticated, (req, res) => {
+    if (req.user.admin_status === true) {
+        const queryText = `SELECT count(*) FROM "survey" WHERE "gender" = 'Other'`;
+        pool.query(queryText)
+            .then((result) => { res.send(result.rows); })
+            .catch((err) => {
+                console.log('Error completing SELECT other query', err);
+                res.sendStatus(500);
+            });
+    }
+});
+// only an admin is able to GET stats from the DB
+// this is a count of total number of gender "female" surveyed
+router.get('/female', rejectUnauthenticated, (req, res) => {
+    if (req.user.admin_status === true) {
+        const queryText = `SELECT count(*) FROM "survey" WHERE "gender" = 'Female'`;
+        pool.query(queryText)
+            .then((result) => { res.send(result.rows); })
+            .catch((err) => {
+                console.log('Error completing SELECT female query', err);
+                res.sendStatus(500);
+            });
+    }
+});
+// only an admin is able to GET stats from the DB
+// this is a count of total number of gender "male" surveyed
+router.get('/male', rejectUnauthenticated, (req, res) => {
+    if (req.user.admin_status === true) {
+        const queryText = `SELECT count(*) FROM "survey" WHERE "gender" = 'Male'`;
+        pool.query(queryText)
+            .then((result) => { res.send(result.rows); })
+            .catch((err) => {
+                console.log('Error completing SELECT male query', err);
+                res.sendStatus(500);
+            });
+    }
+});
+
+// only an admin is able to GET stats from the DB
 // this is a count of total number of people surveyed
 router.get('/total_surveyed', rejectUnauthenticated, (req, res) => {
     // console.log('req.user', req.user);

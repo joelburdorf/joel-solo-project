@@ -18,8 +18,38 @@ const totalSurveyedReducer = (state = [], action) => {
             return state;
     }
 };
+// makes count of all gender "other" available in reduxStoreto ADMINs
+const totalOtherReducer = (state = [], action) => {
+    switch (action.type) {
+        case 'GET_OTHER':
+            return action.payload;
+        default:
+            return state;
+    }
+};
+// makes count of all gender "female" available in reduxStoreto ADMINs
+const totalFemaleReducer = (state = [], action) => {
+    switch (action.type) {
+        case 'GET_FEMALE':
+            return action.payload;
+        default:
+            return state;
+    }
+};
+// makes count of all gender "male" available in reduxStoreto ADMINs
+const totalMaleReducer = (state = [], action) => {
+    switch (action.type) {
+        case 'GET_MALE':
+            return action.payload;
+        default:
+            return state;
+    }
+};
 
 export default combineReducers({
     userAdminAccessReducer,
     totalSurveyedReducer,
+    totalOtherReducer,
+    totalFemaleReducer,
+    totalMaleReducer,
 });
