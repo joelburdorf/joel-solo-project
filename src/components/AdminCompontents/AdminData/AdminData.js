@@ -27,6 +27,14 @@ class AdminData extends Component {
                         <label><b>Total People Surveyed:    </b></label><b>{total.count}</b></li>))}
                 </ul>
                 <br></br>
+                <label><b>Gender "Other":    </b></label>
+                <br></br>
+                <br></br>
+                <label><b>Gender "Female":    </b></label>  
+                <br></br>
+                <br></br>
+                <label><b>Gender "Male":    </b></label>
+                <br></br>
                 <br></br>
                 <button onClick={this.admin}><b>Admin Page</b></button>
             </div>

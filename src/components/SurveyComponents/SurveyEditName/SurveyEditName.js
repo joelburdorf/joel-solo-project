@@ -10,24 +10,25 @@ class SurveyEditName extends Component {
           name: '',
           id: this.props.reduxState.surveyOne.surveyOneId, 
     }
-
     handleNameChange = (event, param) => {
         this.setState({
                 ...this.state,
                 [param]: event.target.value,
         });
     }
-
-
+    // alert user to fill in name
     editName = event => {
         event.preventDefault();
-        this.props.dispatch({ type: 'UPDATE_NAME', payload: this.state })
-        this.setState({
-            name: this.state,
-        });
-        this.props.history.push('/surveySummary')
+            if (this.state.name === '') {
+                alert('Please add a name');
+            } else {
+            this.props.dispatch({ type: 'UPDATE_NAME', payload: this.state });
+            this.setState({
+                name: this.state,
+            });
+            this.props.history.push('/surveySummary');
+        }
     }
-
     render() {
         return (
             <div className="center">

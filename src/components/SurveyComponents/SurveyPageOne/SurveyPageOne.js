@@ -20,14 +20,18 @@ class SurveyPageOne extends Component {
             }
         });
     }
-
-    //pass props with object to path /surveyPageTwo
+    // alert user to fill in all inputs
+    // pass props with object to path /surveyPageTwo
     addNewSurvey = (event) => {
         event.preventDefault();
-        this.props.history.push({
-            pathname: '/surveyPageTwo',
-            newSurvey: this.state.newSurvey 
-        });
+        if (this.state.newSurvey.location === '' || this.state.newSurvey.date === '' || this.state.newSurvey.time === '') {
+                alert('Please make a selection for all three inputs');
+            } else {
+            this.props.history.push({
+                pathname: '/surveyPageTwo',
+                newSurvey: this.state.newSurvey 
+            });
+        }
     };
 
     render() {
