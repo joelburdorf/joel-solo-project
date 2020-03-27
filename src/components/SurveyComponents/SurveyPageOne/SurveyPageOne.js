@@ -37,8 +37,8 @@ class SurveyPageOne extends Component {
 
     render() {
         return (
-            <div className="center">
-                <h1><b>Survey Page One</b></h1>
+            <div >
+                <h1 className="center"><b>Survey Page One</b></h1>
               <form className="form">
                     <label><b>Location:</b></label>
                     <input type='text' placeholder="location" value={this.state.newSurvey.location} 
@@ -55,7 +55,7 @@ class SurveyPageOne extends Component {
                     onChange={(event) => this.handleNameChange(event, 'time')} />
                     <br></br>
                     <br></br>
-                    <Button variant="contained" color="primary" size="small" onClick={this.addNewSurvey}><b>NEXT</b></Button>
+                    <Button className="center" variant="contained" color="primary" size="small" onClick={this.addNewSurvey}><b>NEXT</b></Button>
                 </form>
             </div>
         )

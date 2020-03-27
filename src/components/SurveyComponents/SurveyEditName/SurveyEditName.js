@@ -33,7 +33,7 @@ class SurveyEditName extends Component {
     }
     render() {
         return (
-            <div className="center">
+            <div >
                 <form className="form">
                 <label><b>Edit Name:</b></label>
                 <input type='text' placeholder="optional" value={this.state.name}

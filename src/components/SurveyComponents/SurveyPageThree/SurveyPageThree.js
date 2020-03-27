@@ -64,8 +64,8 @@ class SurveyPageThree extends Component {
 
     render() {
         return (
-            <div className="center">
-                <h1><b>Survey Page Three</b></h1>
+            <div >
+                <h1 className="center"><b>Survey Page Three</b></h1>
                 <form className="form">
                     <label>
                        <b>Race:</b>
@@ -105,7 +105,7 @@ class SurveyPageThree extends Component {
                     <br></br>
                     <br></br>
                     <br></br>
-                    <Button variant="contained" color="primary" size="small" onClick={this.addNewSurvey}><b>Submit</b></Button>
+                    <Button className="center" variant="contained" color="primary" size="small" onClick={this.addNewSurvey}><b>Submit</b></Button>
                 </form>
             </div>
         )
