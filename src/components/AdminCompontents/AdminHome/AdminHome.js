@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { Button } from '@material-ui/core';
 
 class AdminHome extends Component {
     // bring Admin back to the adminData page
@@ -19,13 +20,13 @@ class AdminHome extends Component {
         return (
             <div className="center">
                 <br></br>
-                <button className="link-button" onClick={this.getData}><b>DATA</b></button>
+                <Button variant="contained" color="primary" size="small"  onClick={this.getData}><b>DATA</b></Button>
                 <br></br>
                 <br></br>
-                <button className="link-button" onClick={this.getUserAccounts}><b>USER ACCOUNTS</b></button>
+                <Button variant="contained" color="primary" size="small" onClick={this.getUserAccounts}><b>USER ACCOUNTS</b></Button>
                 <br></br>
                 <br></br>
-                 <button className="link-button" onClick={this.takeSurvey}><b>SURVEYS</b></button>
+                <Button variant="contained" color="primary" size="small" onClick={this.takeSurvey}><b>SURVEYS</b></Button>
                 <br></br>
             </div>
         )}

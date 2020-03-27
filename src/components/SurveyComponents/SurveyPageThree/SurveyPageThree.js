@@ -65,7 +65,7 @@ class SurveyPageThree extends Component {
     render() {
         return (
             <div className="center">
-                <h2><b>Survey Page Three</b></h2>
+                <h1><b>Survey Page Three</b></h1>
                 <form className="form">
                     <label>
                        <b>Race:</b>

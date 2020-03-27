@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { Button } from '@material-ui/core';
 
 
 class AdminUser extends Component {
@@ -25,13 +26,13 @@ class AdminUser extends Component {
     render() {
         return (
             <div className="center">
-                <p><b>Current Users:</b></p> 
+                <h1><b>Current Users</b></h1> 
                 <ul>
                     {this.props.reduxState.admin.userAdminAccessReducer.map(user => (<li key={user.id}><b>{user.username}</b>   
-                        <button onClick={(event) => this.deleteAdminUser(event, user.id)}><b>Delete</b></button></li>))}
+                        <Button color="secondary" size="small" onClick={(event) => this.deleteAdminUser(event, user.id)}><b>Delete</b></Button></li>))}
                 </ul>
                 <br></br>
-                <button onClick={this.admin}><b>Admin Page</b></button>
+                <Button variant="contained" color="primary" size="small" onClick={this.admin}><b>Admin Page</b></Button>
                 {/* <pre>{JSON.stringify(this.props.reduxState.admin.userAdminAccessReducer)}</pre> */}
             </div>
         )

@@ -12,7 +12,7 @@ class AllSurveys extends Component {
     render() {
         return (
             <div className="center">
-                <h2><b>Choose a Survey</b></h2>
+                <h1><b>Choose a Survey</b></h1>
                 <Button variant="contained" color="primary" size="small" onClick={this.goToPageOne}><b>Survey One</b></Button>
                 <br></br>
                 <br></br>

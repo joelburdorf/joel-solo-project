@@ -30,7 +30,7 @@ class SurveySummary extends Component {
     render() {
          return (
              <div className="center">
-                 <h2><b>Survey Summary</b></h2>
+                 <h1><b>Survey Summary</b></h1>
                  <Button variant="contained" color="primary" size="small" onClick={this.getLastSurvey}><b>Update Summary</b></Button>
                 <br></br>
                 <br></br>

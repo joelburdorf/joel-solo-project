@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { Button } from '@material-ui/core';
 
 class AdminData extends Component {
 
@@ -33,7 +34,7 @@ class AdminData extends Component {
     render() {
         return (
             <div className="center">
-                <p><b>Statistics:</b></p>
+                <h1><b>Statistics</b></h1>
                 {/* <h3>{this.props.reduxState.admin.totalSurveyedReducer[0]}</h3> */}
                 <ul>
                     {this.props.reduxState.admin.totalSurveyedReducer.map(total => (<li key={total.id}>
@@ -55,7 +56,7 @@ class AdminData extends Component {
                         <label><b>Gender "Male":    </b></label><b>{total.count}</b></li>))}
                 </ul>
                 <br></br>
-                <button onClick={this.admin}><b>Admin Page</b></button>
+                <Button variant="contained" color="primary" size="small" onClick={this.admin}><b>Admin Page</b></Button>
             </div>
         )
     }

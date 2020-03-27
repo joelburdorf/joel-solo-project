@@ -38,7 +38,7 @@ class SurveyPageOne extends Component {
     render() {
         return (
             <div className="center">
-                <h2><b>Survey Page One</b></h2>
+                <h1><b>Survey Page One</b></h1>
               <form className="form">
                     <label><b>Location:</b></label>
                     <input type='text' placeholder="location" value={this.state.newSurvey.location} 
