@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { Button } from '@material-ui/core';
 
 
 class SurveyEdit extends Component {
@@ -22,20 +23,28 @@ class SurveyEdit extends Component {
     render() {
         return (
             <div className="center">
-                <p><b>Survey Edit</b></p>
+                <h2><b>Survey Edit</b></h2>
                 <ul>
                     {this.props.reduxState.surveyOne.surveyOneLastSurvey.map(info => (<li key={info.id}>
-                        <label><b>Location:</b></label> {info.location} <button onClick={this.editItem}>Edit</button><br /><br />
-                        <label><b>Date</b></label>  {info.date} <button onClick={this.editItem}>Edit</button><br /><br />
-                        <label><b>Name:</b></label>  {info.name}<button onClick={this.editName}>Edit</button> <br /><br />
-                        <label><b>Age:</b></label>  {info.age} <button onClick={this.editItem}>Edit</button><br /><br />
-                        <label><b>Gender:</b></label>  {info.gender}<button onClick={this.editItem}>Edit</button><br /><br />
-                        <label><b>Race:</b></label>  {info.race}<button onClick={this.editItem}>Edit</button><br /><br />
-                        <label><b>Ethnicity:</b></label>  {info.ethnicity}<button onClick={this.editItem}>Edit</button><br /><br />
-                        <label><b>Group:</b></label>  {info.group}<button onClick={this.editItem}>Edit</button><br /><br />
+                        <label><b>Name:</b></label>  {info.name}
+                        <Button  color="secondary" size="small" onClick={this.editName}>Edit</Button> <br /><br />
+                        <label><b>Age:</b></label>  {info.age}
+                        <Button  color="secondary" size="small" onClick={this.editItem}>Edit</Button><br /><br />
+                        <label><b>Gender:</b></label>  {info.gender}
+                        <Button  color="secondary" size="small" onClick={this.editItem}>Edit</Button><br /><br />
+                        <label><b>Location:</b></label> {info.location}
+                        <Button  color="secondary" size="small" onClick={this.editItem}>Edit</Button><br /><br />
+                        <label><b>Date</b></label>  {info.date}
+                        <Button  color="secondary" size="small" onClick={this.editItem}>Edit</Button><br /><br />
+                        <label><b>Race:</b></label>  {info.race}
+                        <Button  color="secondary" size="small" onClick={this.editItem}>Edit</Button><br /><br />
+                        <label><b>Ethnicity:</b></label>  {info.ethnicity}
+                        <Button  color="secondary" size="small" onClick={this.editItem}>Edit</Button><br /><br />
+                        <label><b>Group:</b></label>  {info.group}
+                        <Button  color="secondary" size="small" onClick={this.editItem}>Edit</Button><br /><br />
                     </li>))}
                 </ul>
-                <button onClick={this.complete}><b>Complete</b></button>
+                <Button variant="contained" color="primary" size="small" onClick={this.complete}><b>Complete</b></Button>
             </div>
         )
     }

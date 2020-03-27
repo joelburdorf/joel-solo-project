@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { Button } from '@material-ui/core';
 
 class SurveyPageTwo extends Component {
     // taking 3 addition inputs on this page, then pass them along with
@@ -52,7 +53,7 @@ class SurveyPageTwo extends Component {
     render() {
         return (
             <div className="center">
-                <p><b>Survey Page Two</b></p>
+                <h2><b>Survey Page Two</b></h2>
                 <form className="form">
                     <label><b>Name:</b></label>
                     <input type='text' placeholder="optional" value={this.state.newSurvey.name} 
@@ -83,7 +84,8 @@ class SurveyPageTwo extends Component {
                     </label>
                     <br></br>
                     <br></br>
-                    <button onClick={this.addNewSurvey}><b>NEXT</b></button>
+                    <br></br>
+                    <Button variant="contained" color="primary" size="small" onClick={this.addNewSurvey}><b>NEXT</b></Button>
                 </form>
             </div>
         )

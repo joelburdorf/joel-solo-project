@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-
+import { Button } from '@material-ui/core';
 
 class SurveySummary extends Component {
     
@@ -30,23 +30,25 @@ class SurveySummary extends Component {
     render() {
          return (
              <div className="center">
-                <p><b>Survey Summary</b></p>
-                 <button onClick={this.getLastSurvey}><b>Update Summary</b></button>
+                 <h2><b>Survey Summary</b></h2>
+                 <Button variant="contained" color="primary" size="small" onClick={this.getLastSurvey}><b>Update Summary</b></Button>
                 <br></br>
                 <br></br>
                 <ul>
                      {this.props.reduxState.surveyOne.surveyOneLastSurvey &&
                     this.props.reduxState.surveyOne.surveyOneLastSurvey.map(info => (<li key={info.id}>
-                        <label><b>Location:</b></label> {info.location}<br /><br />
-                        <label><b>Date</b></label>  {info.date} <br /><br />
                         <label><b>Name:</b></label>  {info.name} <br /><br />
                         <label><b>Age:</b></label>  {info.age} <br /><br />
                         <label><b>Gender:</b></label>  {info.gender} <br /><br />
+                        <label><b>Location:</b></label> {info.location}<br /><br />
+                        <label><b>Date</b></label>  {info.date} <br /><br />
                         <label><b>Race:</b></label>  {info.race} <br /><br />
                         <label><b>Ethnicity:</b></label>  {info.ethnicity} <br /><br />
                         <label><b>Group:</b></label>  {info.group} <br /><br />
-                        <button onClick={this.edit}><b>Edit</b></button>
-                        <button onClick={this.complete}><b>Complete</b></button>
+                        <Button variant="contained" color="primary" size="small" onClick={this.edit}><b>Edit</b></Button>
+                        <br></br>
+                        <br></br>
+                        <Button variant="contained" color="primary" size="small" onClick={this.complete}><b>Complete</b></Button>
                        </li>))}
                 </ul>
             </div>

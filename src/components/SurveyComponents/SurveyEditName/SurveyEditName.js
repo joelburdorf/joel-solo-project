@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { Button } from '@material-ui/core';
 
 
 class SurveyEditName extends Component {
@@ -39,7 +40,7 @@ class SurveyEditName extends Component {
                     onChange={(event) => this.handleNameChange(event, 'name')} />
                 <br></br>
                 <br></br>
-                    <button onClick={this.editName}><b>Save Name</b></button>
+                    <Button variant="contained" color="primary" size="small" onClick={this.editName}><b>Save</b></Button>
                 </form>
               </div>
         )

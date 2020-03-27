@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-
+import { Button } from '@material-ui/core';
 
 class AllSurveys extends Component {
 
@@ -12,12 +12,14 @@ class AllSurveys extends Component {
     render() {
         return (
             <div className="center">
-                <p><b>Choose a Survey</b></p>
-                <button onClick={this.goToPageOne}><b>Survey One</b></button>
+                <h2><b>Choose a Survey</b></h2>
+                <Button variant="contained" color="primary" size="small" onClick={this.goToPageOne}><b>Survey One</b></Button>
                 <br></br>
-                <button><b>Survey Two</b></button>
                 <br></br>
-                <button><b>Survey Three</b></button>
+                <Button variant="contained" color="primary" size="small" ><b>Survey Two</b></Button>
+                <br></br>
+                <br></br>
+                <Button variant="contained" color="primary" size="small" ><b>Survey Three</b></Button>
 
             </div>
         )

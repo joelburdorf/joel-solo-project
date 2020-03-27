@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { Button } from '@material-ui/core';
 
 
 class SurveyPageOne extends Component {
@@ -37,7 +38,7 @@ class SurveyPageOne extends Component {
     render() {
         return (
             <div className="center">
-                <p><b>Survey Page One</b></p>
+                <h2><b>Survey Page One</b></h2>
               <form className="form">
                     <label><b>Location:</b></label>
                     <input type='text' placeholder="location" value={this.state.newSurvey.location} 
@@ -54,7 +55,7 @@ class SurveyPageOne extends Component {
                     onChange={(event) => this.handleNameChange(event, 'time')} />
                     <br></br>
                     <br></br>
-                    <button onClick={this.addNewSurvey}><b>NEXT</b></button>
+                    <Button variant="contained" color="primary" size="small" onClick={this.addNewSurvey}><b>NEXT</b></Button>
                 </form>
             </div>
         )
