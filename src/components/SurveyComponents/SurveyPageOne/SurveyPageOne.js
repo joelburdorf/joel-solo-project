@@ -7,7 +7,7 @@ class SurveyPageOne extends Component {
     // taking 3 inputs on this page, then pass them as props
     state = {
         newSurvey: {
-            location: '',
+            location: 'Near Lake St Station',
             date: '',
             time: '',
         }

@@ -8,7 +8,7 @@ class SurveyEditName extends Component {
     // call to sagas to change name in the DB for this ID only
     // id is the RETURNING id for this users last POST of latest survey
     state = {
-          name: '',
+          name: 'Michael',
           id: this.props.reduxState.surveyOne.surveyOneId, 
     }
     handleNameChange = (event, param) => {

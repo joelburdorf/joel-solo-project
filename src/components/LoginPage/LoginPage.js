@@ -3,8 +3,8 @@ import { connect } from 'react-redux';
 
 class LoginPage extends Component {
   state = {
-    username: '',
-    password: '',
+    username: 'Joel',
+    password: 'password',
   };
 
   login = (event) => {
