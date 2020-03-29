@@ -35,7 +35,7 @@ class SurveyEditName extends Component {
         return (
             <div >
                 <form className="form">
-                <label><b>Edit Name:</b></label>
+                    <label><b>Edit Name:</b></label>
                 <input type='text' placeholder="optional" value={this.state.name}
                     onChange={(event) => this.handleNameChange(event, 'name')} />
                 <br></br>

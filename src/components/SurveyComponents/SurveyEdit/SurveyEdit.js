@@ -23,7 +23,7 @@ class SurveyEdit extends Component {
     render() {
         return (
             <div className="center">
-                <h1><b>Survey Edit</b></h1>
+                <h1><b>Observation Edit</b></h1>
                 <ul>
                     {this.props.reduxState.surveyOne.surveyOneLastSurvey.map(info => (<li key={info.id}>
                         <label><b>Name:</b></label>  {info.name}
