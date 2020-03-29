@@ -10,7 +10,7 @@ class SurveyPageTwo extends Component {
             location: '',
             date: '',
             time: '',
-            name: 'Chucky Man',
+            name: 'Chucky',
             age: '',
             gender: '',
         }

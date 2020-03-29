@@ -13,16 +13,16 @@ class AllSurveys extends Component {
             <div className="center">
                 <h1><b>Choose a Survey</b></h1>
                 <br></br>
-                <Button variant="contained" color="primary" size="small" onClick={this.goToPageOne}><b>Survey One</b></Button>
+                <Button variant="contained" color="primary" size="small" onClick={this.goToPageOne}><b>Observation</b></Button>
                 <br></br>
                 <br></br>
-                <Button variant="contained" color="primary" size="small" ><b>Survey Two</b></Button>
+                <Button variant="contained" color="primary" size="small" ><b>Children</b></Button>
                 <br></br>
                 <br></br>
-                <Button variant="contained" color="primary" size="small" ><b>Survey Three</b></Button>
+                <Button variant="contained" color="primary" size="small" ><b>Veteran Register</b></Button>
                 <br></br>
                 <br></br>
-                <Button variant="contained" color="primary" size="small" ><b>Survey Four</b></Button>
+                <Button variant="contained" color="primary" size="small" ><b>Transit</b></Button>
 
             </div>
         )
